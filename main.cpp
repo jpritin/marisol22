@@ -8,8 +8,6 @@
 //Add WIFI data
 const char* ssid = "marisol";              //Add your WIFI network name 
 const char* password =  "12345678";       //Add WIFI password
-//const char* ssid = "vodafone4168";              //Add your WIFI network name 
-//const char* password =  "E2NMJGM2QDJDMV";       //Add WIFI password
 
 //Variables used in the code
 String LED_id = "1";                  //Just in case you control more than 1 LED
@@ -18,7 +16,7 @@ unsigned int Actual_Millis, Previous_Millis;
 int refresh_time = 2000;               //Refresh rate of connection to website (recommended more than 1s)
 const int httpsPort = 443;            //HTTPS= 443
 //SHA1 finger print of certificate use web browser to view and copy
-const char fingerprint[] PROGMEM = "AE E2 33 AD AE 6E D9 BE 6A FA 5B 6F C9 62 35 BB A6 43 D4 31";
+const char fingerprint[] PROGMEM = "AE E2 33 AD AE 6E D9 BE 6A FA 5B 6F C9 62 35 BB A6 43 D4 31"; // CAMBIAR
 
 // NodeCMU Pinout https://www.luisllamas.es/esp8266-nodemcu/
 int LED = 2;                      // GPIO2 - D4  . LED
@@ -125,7 +123,7 @@ void loop() {
       
       //Begin new connection to website   
       Serial.print("--Sending POST");    
-      http.begin(client,"https://ieslamarisma.net/marisol/update.php");   //Indicate the destination webpage 
+      http.begin(client,"https://url/update.php");   //Indicate the destination webpage 
       http.addHeader("Content-Type", "application/x-www-form-urlencoded");//Prepare the header    
       int response_code = http.POST(data_to_send);                        //Send the POST. This will giveg us a response code
 
